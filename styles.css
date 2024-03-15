@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+button {
+    font-size:40px;
+	text-align: center;
+	border: 1px solid transparent;
+	line-height: 1.5;
+	border-radius: 10px;
+	background-color:white;
+    height: 75px;
+    width: 75px;
+    margin: 15px;
+    border: 1px solid greenyellow;
+
+}
+button:hover{
+    background-color: palegreen;
+}
+button:active{
+    scale: 1.1;
+
+}
+.first-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.display{
+    width: 285px;
+    border: 1px solid steelblue;
+    border-radius: 5px;
+    height: 75px;
+    margin: 15px;
+}
