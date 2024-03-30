@@ -38,4 +38,6 @@ button:active{
     border-radius: 5px;
     height: 75px;
     margin: 15px;
+    text-align: end;
+    font-size: 36px;
 }

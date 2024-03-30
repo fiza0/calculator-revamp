@@ -11,22 +11,65 @@ function multiply(a,b){
     return a*b
 }
 
-let firstNumber,operator,secondNumber
+let firstNumber=0
+    ,operation
+    ,secondNumber
+    ,result
 
-function operate(firstNumber,operator,secondNumber){
-    switch(operator){
+function operate(firstNumber,operation,secondNumber){
+    switch(operation){
         case '+':
-            add(firstNumber,secondNumber)
+            return add(firstNumber,secondNumber)
         break;
         case '-':
-            subtract(firstNumber,secondNumber)
+            return subtract(firstNumber,secondNumber)
         break;
         case '*':
-            multiply(firstNumber,secondNumber)
+            return multiply(firstNumber,secondNumber)
         break;
         case '/':
-            divide(firstNumber,secondNumber)
+            return divide(firstNumber,secondNumber)
         break;
     }
     
 }
+buttons=document.querySelectorAll('.number')
+display=document.querySelector('.display')
+buttons.forEach(button=>{
+    button.addEventListener('click',()=>{
+        id=button.id
+        display.textContent+=id
+
+    })
+})
+
+operators=document.querySelectorAll('.operator')
+operators.forEach(operator=>{
+    operator.addEventListener('click',()=>{
+        firstNumber=Number(display.textContent)
+        operation=`${operator.id}`
+        display.textContent=''
+    })
+})
+equals=document.querySelector('.equal')
+equals.addEventListener('click',()=>{
+    secondNumber=Number(display.textContent)
+    result=operate(firstNumber,operation,secondNumber)
+    display.textContent=`${result}`
+})
+clear=document.querySelector('.clear')
+clear.addEventListener('click',()=>{
+    display.textContent=''
+    operation=undefined
+    firstNumber=0
+    secondNumber=undefined
+    result=0
+})
+decimal=document.querySelector('.decimal')
+decimal.addEventListener('click',()=>{
+    displayText=display.textContent
+    if(displayText.includes('.')){
+    }else{
+        display.textContent+='.'
+    }
+})
