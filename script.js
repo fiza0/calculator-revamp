@@ -46,9 +46,18 @@ buttons.forEach(button=>{
 operators=document.querySelectorAll('.operator')
 operators.forEach(operator=>{
     operator.addEventListener('click',()=>{
+        if(firstNumber){
+            secondNumber=Number(display.textContent)
+            result=operate(firstNumber,operation,secondNumber)
+            display.textContent=`${result}`
+            firstNumber=result
+            display.textContent=''
+        }else{
         firstNumber=Number(display.textContent)
         operation=`${operator.id}`
         display.textContent=''
+        }
+        
     })
 })
 equals=document.querySelector('.equal')
